@@ -1,0 +1,122 @@
+{
+    "sourceFile": "src/sections/Quote.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 26,
+            "patches": [
+                {
+                    "date": 1685357730940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685357763629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n+import React from \"react\";\r\n \r\n-\r\n const Quote = () => {\r\n   return ( \r\n     <div>\r\n       Quote\r\n"
+                },
+                {
+                    "date": 1685357911280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,17 @@\n import React from \"react\";\r\n+import styled from \"styled-components\";\r\n \r\n+const Section = styled.section`\r\n+width:100vw;\r\n+height:100wh;\r\n+position:relative;\r\n+\r\n+display:flex;\r\n+justify-content:center;\r\n+align-items:center;\r\n+`\r\n const Quote = () => {\r\n-  return ( \r\n-    <div>\r\n-      Quote\r\n-    </div>\r\n-   );\r\n+  return <Section>Quote</Section>\r\n }\r\n  \r\n export default Quote;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685357921601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import styled from \"styled-components\";\r\n \r\n const Section = styled.section`\r\n width:100vw;\r\n-height:100wh;\r\n+height:100vh;\r\n position:relative;\r\n \r\n display:flex;\r\n justify-content:center;\r\n"
+                },
+                {
+                    "date": 1685358221376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,26 @@\n display:flex;\r\n justify-content:center;\r\n align-items:center;\r\n `\r\n+\r\n+const TextContainer = styled.section`\r\n+  width: 100vw;\r\n+  height: 100vh;\r\n+  position: relative;\r\n+\r\n+  display: flex;\r\n+  flex-direction:column;\r\n+  justify-content: center;\r\n+  align-items: center;\r\n+`\r\n const Quote = () => {\r\n-  return <Section>Quote</Section>\r\n+  return (\r\n+  <Section>\r\n+    <TextContainer >\r\n+      \r\n+    </TextContainer>\r\n+  </Section>\r\n+  )\r\n }\r\n  \r\n export default Quote;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685358248442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,13 @@\n const Quote = () => {\r\n   return (\r\n   <Section>\r\n     <TextContainer >\r\n-      \r\n+      <span>line-1</span>\r\n+      <span>line-2</span>\r\n+      <span>line-3</span>\r\n+      <span>line-4</span>\r\n+      <span>line-5</span>\r\n     </TextContainer>\r\n   </Section>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685358325829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,11 @@\n   display: flex;\r\n   flex-direction:column;\r\n   justify-content: center;\r\n   align-items: center;\r\n+\r\n+  background-color:var(--dark);\r\n+  color: var(--white);\r\n `\r\n const Quote = () => {\r\n   return (\r\n   <Section>\r\n"
+                },
+                {
+                    "date": 1685358412893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,13 +27,13 @@\n const Quote = () => {\r\n   return (\r\n   <Section>\r\n     <TextContainer >\r\n-      <span>line-1</span>\r\n-      <span>line-2</span>\r\n-      <span>line-3</span>\r\n-      <span>line-4</span>\r\n-      <span>line-5</span>\r\n+     <Text> <span>line-1</span></Text>\r\n+     <Text> <span>line-2</span></Text>\r\n+     <Text> <span>line-3</span></Text>\r\n+     <Text> <span>line-4</span></Text>\r\n+     <Text> <span>line-5</span></Text>\r\n     </TextContainer>\r\n   </Section>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685358446892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,11 @@\n \r\n   background-color:var(--dark);\r\n   color: var(--white);\r\n `\r\n+const Text = styled.section`\r\n+\r\n+`\r\n const Quote = () => {\r\n   return (\r\n   <Section>\r\n     <TextContainer >\r\n"
+                },
+                {
+                    "date": 1685358533544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,13 @@\n   background-color:var(--dark);\r\n   color: var(--white);\r\n `\r\n const Text = styled.section`\r\n-\r\n+width:50%;\r\n+font-size:var(--fontlg);\r\n+position:relative;\r\n+height:var(--fontmd);\r\n+overflow:hidden;\r\n `\r\n const Quote = () => {\r\n   return (\r\n   <Section>\r\n"
+                },
+                {
+                    "date": 1685358581660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,14 @@\n font-size:var(--fontlg);\r\n position:relative;\r\n height:var(--fontmd);\r\n overflow:hidden;\r\n+\r\n+span{\r\n+  background-color: lightblue;\r\n+  position:absolute;\r\n+  transform:translateY(3rem);\r\n+}\r\n `\r\n const Quote = () => {\r\n   return (\r\n   <Section>\r\n"
+                },
+                {
+                    "date": 1685358612067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \r\n   background-color:var(--dark);\r\n   color: var(--white);\r\n `\r\n-const Text = styled.section`\r\n+const Text = styled.p`\r\n width:50%;\r\n font-size:var(--fontlg);\r\n position:relative;\r\n height:var(--fontmd);\r\n"
+                },
+                {
+                    "date": 1685358786401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from \"react\";\r\n-import styled from \"styled-components\";\r\n+import styled, { keyframes } from \"styled-components\";\r\n \r\n const Section = styled.section`\r\n width:100vw;\r\n height:100vh;\r\n@@ -23,20 +23,28 @@\n \r\n   background-color:var(--dark);\r\n   color: var(--white);\r\n `\r\n+const moveUp = keyframes`\r\n+100%{\r\n+  transform:translateY(0);\r\n+}\r\n+`\r\n const Text = styled.p`\r\n-width:50%;\r\n-font-size:var(--fontlg);\r\n-position:relative;\r\n-height:var(--fontmd);\r\n-overflow:hidden;\r\n+  width: 50%;\r\n+  font-size: var(--fontlg);\r\n+  position: relative;\r\n+  height: var(--fontmd);\r\n+  overflow: hidden;\r\n \r\n-span{\r\n-  background-color: lightblue;\r\n-  position:absolute;\r\n-  transform:translateY(3rem);\r\n-}\r\n+  span {\r\n+    background-color: lightblue;\r\n+    position: absolute;\r\n+    transform: translateY(3rem);\r\n+    animation-name: ${moveUp};\r\n+    animation-duration:2.5s;\r\n+    animation-timing-function:ease;\r\n+  }\r\n `\r\n const Quote = () => {\r\n   return (\r\n   <Section>\r\n"
+                },
+                {
+                    "date": 1685358801747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,8 @@\n   height: var(--fontmd);\r\n   overflow: hidden;\r\n \r\n   span {\r\n-    background-color: lightblue;\r\n     position: absolute;\r\n     transform: translateY(3rem);\r\n     animation-name: ${moveUp};\r\n     animation-duration:2.5s;\r\n"
+                },
+                {
+                    "date": 1685358828404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,9 @@\n     transform: translateY(3rem);\r\n     animation-name: ${moveUp};\r\n     animation-duration:2.5s;\r\n     animation-timing-function:ease;\r\n+    animation-fill-mode:forwards;\r\n   }\r\n `\r\n const Quote = () => {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1685359006132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,11 +39,16 @@\n   span {\r\n     position: absolute;\r\n     transform: translateY(3rem);\r\n     animation-name: ${moveUp};\r\n-    animation-duration:2.5s;\r\n-    animation-timing-function:ease;\r\n-    animation-fill-mode:forwards;\r\n+    animation-duration: 2.5s;\r\n+    animation-timing-function: ease;\r\n+    animation-fill-mode: forwards;\r\n+    font-family: var(--fontL);\r\n+    background-image: linear-gradient(-45deg, var(--gradient));\r\n+    background-clip: text;\r\n+    -webkit-background-clip: text;\r\n+    -webkit-text-fill-color:transparent;\r\n   }\r\n `\r\n const Quote = () => {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1685359231269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,13 +53,13 @@\n const Quote = () => {\r\n   return (\r\n   <Section>\r\n     <TextContainer >\r\n-     <Text> <span>line-1</span></Text>\r\n-     <Text> <span>line-2</span></Text>\r\n-     <Text> <span>line-3</span></Text>\r\n-     <Text> <span>line-4</span></Text>\r\n-     <Text> <span>line-5</span></Text>\r\n+     <Text> <span>You can't connect the dots looking forward;</span></Text>\r\n+     <Text> <span>you can only connect them looking backward.</span></Text>\r\n+     <Text> <span>so you have to trust that the dots</span></Text>\r\n+     <Text> <span>will somehow connect in your future.</span></Text>\r\n+     <Text> <span>Steve Jobs</span></Text>\r\n     </TextContainer>\r\n   </Section>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685359293450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,12 +53,12 @@\n const Quote = () => {\r\n   return (\r\n   <Section>\r\n     <TextContainer >\r\n-     <Text> <span>You can't connect the dots looking forward;</span></Text>\r\n+     <Text> <span>&#8220; You can't connect the dots looking forward;</span></Text>\r\n      <Text> <span>you can only connect them looking backward.</span></Text>\r\n      <Text> <span>so you have to trust that the dots</span></Text>\r\n-     <Text> <span>will somehow connect in your future.</span></Text>\r\n+     <Text> <span>will somehow connect in your future. &#8221;</span></Text>\r\n      <Text> <span>Steve Jobs</span></Text>\r\n     </TextContainer>\r\n   </Section>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685359329462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,17 +51,34 @@\n   }\r\n `\r\n const Quote = () => {\r\n   return (\r\n-  <Section>\r\n-    <TextContainer >\r\n-     <Text> <span>&#8220; You can't connect the dots looking forward;</span></Text>\r\n-     <Text> <span>you can only connect them looking backward.</span></Text>\r\n-     <Text> <span>so you have to trust that the dots</span></Text>\r\n-     <Text> <span>will somehow connect in your future. &#8221;</span></Text>\r\n-     <Text> <span>Steve Jobs</span></Text>\r\n-    </TextContainer>\r\n-  </Section>\r\n+    <Section>\r\n+      <TextContainer>\r\n+        <Text>\r\n+          {' '}\r\n+          <span>&#8220; You can't connect the dots looking forward;</span>\r\n+        </Text>\r\n+        <Text>\r\n+          {' '}\r\n+          <span>\r\n+            &nbsp;&nbsp;&nbsp;you can only connect them looking backward.\r\n+          </span>\r\n+        </Text>\r\n+        <Text>\r\n+          {' '}\r\n+          <span>&nbsp;&nbsp;&nbsp;so you have to trust that the dots</span>\r\n+        </Text>\r\n+        <Text>\r\n+          {' '}\r\n+          <span>&nbsp;&nbsp;&nbsp;will somehow connect in your future. &#8221;</span>\r\n+        </Text>\r\n+        <Text>\r\n+          {' '}\r\n+          <span>Steve Jobs</span>\r\n+        </Text>\r\n+      </TextContainer>\r\n+    </Section>\r\n   )\r\n }\r\n  \r\n export default Quote;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685359399998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,9 +73,9 @@\n           <span>&nbsp;&nbsp;&nbsp;will somehow connect in your future. &#8221;</span>\r\n         </Text>\r\n         <Text>\r\n           {' '}\r\n-          <span>Steve Jobs</span>\r\n+          <span> Steve Jobs</span>\r\n         </Text>\r\n       </TextContainer>\r\n     </Section>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685359447302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,9 @@\n     -webkit-background-clip: text;\r\n     -webkit-text-fill-color:transparent;\r\n   }\r\n `\r\n+\r\n const Quote = () => {\r\n   return (\r\n     <Section>\r\n       <TextContainer>\r\n@@ -58,24 +59,20 @@\n           {' '}\r\n           <span>&#8220; You can't connect the dots looking forward;</span>\r\n         </Text>\r\n         <Text>\r\n-          {' '}\r\n           <span>\r\n             &nbsp;&nbsp;&nbsp;you can only connect them looking backward.\r\n           </span>\r\n         </Text>\r\n         <Text>\r\n-          {' '}\r\n           <span>&nbsp;&nbsp;&nbsp;so you have to trust that the dots</span>\r\n         </Text>\r\n         <Text>\r\n-          {' '}\r\n           <span>&nbsp;&nbsp;&nbsp;will somehow connect in your future. &#8221;</span>\r\n         </Text>\r\n         <Text>\r\n-          {' '}\r\n-          <span> Steve Jobs</span>\r\n+          <span className=\"author\">&#x23AF;Steve Jobs</span>\r\n         </Text>\r\n       </TextContainer>\r\n     </Section>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685359507330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,10 +46,16 @@\n     font-family: var(--fontL);\r\n     background-image: linear-gradient(-45deg, var(--gradient));\r\n     background-clip: text;\r\n     -webkit-background-clip: text;\r\n-    -webkit-text-fill-color:transparent;\r\n+    -webkit-text-fill-color: transparent;\r\n   }\r\n+\r\n+  .author {\r\n+    width: 100%;\r\n+    text-align: end;\r\n+    background-image: linear-gradient(-180deg, var(--gradient));\r\n+  }\r\n `\r\n \r\n const Quote = () => {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1685359518961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,8 @@\n   return (\r\n     <Section>\r\n       <TextContainer>\r\n         <Text>\r\n-          {' '}\r\n           <span>&#8220; You can't connect the dots looking forward;</span>\r\n         </Text>\r\n         <Text>\r\n           <span>\r\n"
+                },
+                {
+                    "date": 1685359535219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,28 +1,28 @@\n-import React from \"react\";\r\n-import styled, { keyframes } from \"styled-components\";\r\n+import React from 'react'\r\n+import styled, { keyframes } from 'styled-components'\r\n \r\n const Section = styled.section`\r\n-width:100vw;\r\n-height:100vh;\r\n-position:relative;\r\n+  width: 100vw;\r\n+  height: 100vh;\r\n+  position: relative;\r\n \r\n-display:flex;\r\n-justify-content:center;\r\n-align-items:center;\r\n+  display: flex;\r\n+  justify-content: center;\r\n+  align-items: center;\r\n `\r\n \r\n const TextContainer = styled.section`\r\n   width: 100vw;\r\n   height: 100vh;\r\n   position: relative;\r\n \r\n   display: flex;\r\n-  flex-direction:column;\r\n+  flex-direction: column;\r\n   justify-content: center;\r\n   align-items: center;\r\n \r\n-  background-color:var(--dark);\r\n+  background-color: var(--dark);\r\n   color: var(--white);\r\n `\r\n const moveUp = keyframes`\r\n 100%{\r\n@@ -72,15 +72,17 @@\n         <Text>\r\n           <span>&nbsp;&nbsp;&nbsp;so you have to trust that the dots</span>\r\n         </Text>\r\n         <Text>\r\n-          <span>&nbsp;&nbsp;&nbsp;will somehow connect in your future. &#8221;</span>\r\n+          <span>\r\n+            &nbsp;&nbsp;&nbsp;will somehow connect in your future. &#8221;\r\n+          </span>\r\n         </Text>\r\n         <Text>\r\n           <span className=\"author\">&#x23AF;Steve Jobs</span>\r\n         </Text>\r\n       </TextContainer>\r\n     </Section>\r\n   )\r\n\\ No newline at end of file\n }\r\n- \r\n-export default Quote;\n+\r\n+export default Quote\r\n"
+                },
+                {
+                    "date": 1685359558845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,8 +42,9 @@\n     animation-name: ${moveUp};\r\n     animation-duration: 2.5s;\r\n     animation-timing-function: ease;\r\n     animation-fill-mode: forwards;\r\n+    animation-delay:;\r\n     font-family: var(--fontL);\r\n     background-image: linear-gradient(-45deg, var(--gradient));\r\n     background-clip: text;\r\n     -webkit-background-clip: text;\r\n@@ -84,5 +85,5 @@\n     </Section>\r\n   )\r\n }\r\n \r\n-export default Quote\n\\ No newline at end of file\n+export default Quote\r\n"
+                },
+                {
+                    "date": 1685359590984,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n     animation-name: ${moveUp};\r\n     animation-duration: 2.5s;\r\n     animation-timing-function: ease;\r\n     animation-fill-mode: forwards;\r\n-    animation-delay:;\r\n+    animation-delay:${props => props.delay};\r\n     font-family: var(--fontL);\r\n     background-image: linear-gradient(-45deg, var(--gradient));\r\n     background-clip: text;\r\n     -webkit-background-clip: text;\r\n"
+                },
+                {
+                    "date": 1685359646745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,25 +61,25 @@\n const Quote = () => {\r\n   return (\r\n     <Section>\r\n       <TextContainer>\r\n-        <Text>\r\n+        <Text delay=\"0s\">\r\n           <span>&#8220; You can't connect the dots looking forward;</span>\r\n         </Text>\r\n-        <Text>\r\n+        <Text delay=\"0.4s\">\r\n           <span>\r\n             &nbsp;&nbsp;&nbsp;you can only connect them looking backward.\r\n           </span>\r\n         </Text>\r\n-        <Text>\r\n+        <Text delay=\"0.8s\">\r\n           <span>&nbsp;&nbsp;&nbsp;so you have to trust that the dots</span>\r\n         </Text>\r\n-        <Text>\r\n+        <Text delay=\"1.2s\">\r\n           <span>\r\n             &nbsp;&nbsp;&nbsp;will somehow connect in your future. &#8221;\r\n           </span>\r\n         </Text>\r\n-        <Text>\r\n+        <Text delay=\"1.6s\">\r\n           <span className=\"author\">&#x23AF;Steve Jobs</span>\r\n         </Text>\r\n       </TextContainer>\r\n     </Section>\r\n"
+                }
+            ],
+            "date": 1685357730940,
+            "name": "Commit-0",
+            "content": "\r\n\r\nconst Quote = () => {\r\n  return ( \r\n    <div>\r\n      Quote\r\n    </div>\r\n   );\r\n}\r\n \r\nexport default Quote;"
+        }
+    ]
+}
