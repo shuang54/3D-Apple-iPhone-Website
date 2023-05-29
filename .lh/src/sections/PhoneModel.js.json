@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 20,
+            "activePatchIndex": 24,
             "patches": [
                 {
                     "date": 1685361080595,
@@ -88,6 +88,22 @@
                 {
                     "date": 1685364673808,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,14 +20,13 @@\n         {/* 环境光 */}\r\n         <ambientLight intensity={1.25} />\r\n         {/* 定向光 */}\r\n         <directionalLight position={0.4} />\r\n-        <Suspense>\r\n+        <Suspense fallback={null}>\r\n           {/* 手机模型 */}\r\n           <Model />\r\n         </Suspense>\r\n         <Environment preset=\"night\" />\r\n-\r\n         {/* 轨道控制:box可以旋转 */}\r\n         <OrbitControls />\r\n       </Canvas>\r\n     </Container>\r\n"
+                },
+                {
+                    "date": 1685367061749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n `\r\n \r\n const PhoneModel = () => {\r\n   return (\r\n-    <Container>\r\n+    <Container id='phone'>\r\n       <Canvas camera={{ fov: 14 }}>\r\n         {/* 环境光 */}\r\n         <ambientLight intensity={1.25} />\r\n         {/* 定向光 */}\r\n"
+                },
+                {
+                    "date": 1685367068011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n `\r\n \r\n const PhoneModel = () => {\r\n   return (\r\n-    <Container id='phone'>\r\n+    <Container id='phone-model'>\r\n       <Canvas camera={{ fov: 14 }}>\r\n         {/* 环境光 */}\r\n         <ambientLight intensity={1.25} />\r\n         {/* 定向光 */}\r\n"
+                },
+                {
+                    "date": 1685367540461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,36 +1,36 @@\n-import { Environment, OrbitControls } from '@react-three/drei'\r\n+import React from 'react'\r\n+import styled from 'styled-components'\r\n import { Canvas } from '@react-three/fiber'\r\n-import React, { Suspense } from 'react'\r\n-import styled from 'styled-components'\r\n-import Model from '../assets/3D-Model/Scene.jsx'\r\n+import { AdaptiveDpr, AdaptiveEvents, Environment } from '@react-three/drei'\r\n+import Model from '../components/Scene'\r\n+import { Suspense } from 'react'\r\n+\r\n const Container = styled.div`\r\n-  width:100vw;\r\n-  height:100vh;\r\n-\r\n-  position:fixed;\r\n-  top:0;\r\n-  z-index:1;\r\n-  background-color:transparent;\r\n+  width: 100vw;\r\n+  height: 100vh;\r\n+  position: fixed;\r\n+  top: 0;\r\n+  z-index: 1;\r\n+  background-color: transparent;\r\n+  transition: all 0.3s ease;\r\n `\r\n \r\n const PhoneModel = () => {\r\n   return (\r\n-    <Container id='phone-model'>\r\n+    <Container id=\"phone-model\">\r\n       <Canvas camera={{ fov: 14 }}>\r\n-        {/* 环境光 */}\r\n         <ambientLight intensity={1.25} />\r\n-        {/* 定向光 */}\r\n\\ No newline at end of file\n-        <directionalLight position={0.4} />\r\n+        <directionalLight intensity={0.4} />\r\n         <Suspense fallback={null}>\r\n-          {/* 手机模型 */}\r\n           <Model />\r\n         </Suspense>\r\n         <Environment preset=\"night\" />\r\n-        {/* 轨道控制:box可以旋转 */}\r\n-        <OrbitControls />\r\n+        <AdaptiveDpr pixelated />\r\n+        <AdaptiveEvents />\r\n+        {/* <OrbitControls /> */}\r\n       </Canvas>\r\n     </Container>\r\n   )\r\n }\r\n \r\n-export default PhoneModel\n+export default PhoneModel\r\n"
+                },
+                {
+                    "date": 1685367558663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n import styled from 'styled-components'\r\n import { Canvas } from '@react-three/fiber'\r\n import { AdaptiveDpr, AdaptiveEvents, Environment } from '@react-three/drei'\r\n-import Model from '../components/Scene'\r\n+import Model from '../assets/3D-Model/Scene.jsx'\r\n import { Suspense } from 'react'\r\n \r\n const Container = styled.div`\r\n   width: 100vw;\r\n"
                 }
             ],
             "date": 1685361080595,

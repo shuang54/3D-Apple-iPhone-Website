@@ -8,7 +8,7 @@ function App() {
     <>
       <GlobalStyle />
       <Quote/>
-      <PhoneModel/>
+      {/* <PhoneModel/> */}
       <HeroSection/>
     </>
   );
