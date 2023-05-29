@@ -1,0 +1,82 @@
+{
+    "sourceFile": "src/sections/HeroSection.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 16,
+            "patches": [
+                {
+                    "date": 1685359738573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685359929707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,18 @@\n+import React from \"react\";\r\n+import styled from \"styled-components\";\r\n+\r\n+const Section = styled.section`\r\n+width:100vw;\r\n+height:100vh;\r\n+position:relative;\r\n+\r\n+display:flex;\r\n+\r\n+background-color:var(--dark);\r\n+overflow:hidden;\r\n+`\r\n+\r\n const HeroSection = () => {\r\n   return ( \r\n     <div>\r\n       HeroSection\r\n"
+                },
+                {
+                    "date": 1685359937994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,16 +8,16 @@\n \r\n display:flex;\r\n \r\n background-color:var(--dark);\r\n-overflow:hidden;\r\n+overflow:hidden; \r\n `\r\n \r\n const HeroSection = () => {\r\n   return ( \r\n-    <div>\r\n+    <Section>\r\n       HeroSection\r\n-    </div>\r\n+    </Section>\r\n    );\r\n }\r\n  \r\n export default HeroSection;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685360073194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \r\n background-color:var(--dark);\r\n overflow:hidden; \r\n `\r\n-\r\n+const Title\r\n const HeroSection = () => {\r\n   return ( \r\n     <Section>\r\n       HeroSection\r\n"
+                },
+                {
+                    "date": 1685360087844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,11 @@\n \r\n background-color:var(--dark);\r\n overflow:hidden; \r\n `\r\n-const Title\r\n+const Title = styled.h1`\r\n+\r\n+`\r\n const HeroSection = () => {\r\n   return ( \r\n     <Section>\r\n       HeroSection\r\n"
+                },
+                {
+                    "date": 1685360109774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n background-color:var(--dark);\r\n overflow:hidden; \r\n `\r\n const Title = styled.h1`\r\n-\r\n+position:absolute;\r\n `\r\n const HeroSection = () => {\r\n   return ( \r\n     <Section>\r\n"
+                },
+                {
+                    "date": 1685360176004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,14 @@\n overflow:hidden; \r\n `\r\n const Title = styled.h1`\r\n position:absolute;\r\n+top:2rem;\r\n+left:2rem;\r\n+\r\n+font-size:var(--fontlg);\r\n+font-family:var(--fontL);\r\n+color:var(--greyLight);\r\n `\r\n const HeroSection = () => {\r\n   return ( \r\n     <Section>\r\n"
+                },
+                {
+                    "date": 1685360201066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n `\r\n const HeroSection = () => {\r\n   return ( \r\n     <Section>\r\n-      HeroSection\r\n+      <Title>iPhone 14 Pro Max</Title>\r\n     </Section>\r\n    );\r\n }\r\n  \r\n"
+                },
+                {
+                    "date": 1685360410474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,11 @@\n const HeroSection = () => {\r\n   return ( \r\n     <Section>\r\n       <Title>iPhone 14 Pro Max</Title>\r\n+      <TextContainer>\r\n+        \r\n+      </TextContainer>\r\n     </Section>\r\n    );\r\n }\r\n  \r\n"
+                },
+                {
+                    "date": 1685360587150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,14 +19,37 @@\n font-size:var(--fontlg);\r\n font-family:var(--fontL);\r\n color:var(--greyLight);\r\n `\r\n+\r\n+const TextContainer = styled.div`\r\n+  width: 100%;\r\n+  height: 100vh;\r\n+\r\n+  display: flex;\r\n+  justify-content: space-between;\r\n+  align-items: center;\r\n+\r\n+  background-image: linear-gradient(-45deg, var(--gradient));\r\n+  background-clip: text;\r\n+  -webkit-background-clip: text;\r\n+  -webkit-text-fill-color: transparent;\r\n+\r\n+  span{\r\n+    font-size:var(--fontxxxl);\r\n+    text-transform:uppercase;\r\n+    font-weight:600;\r\n+    padding:2rem;\r\n+  }\r\n+`\r\n+\r\n const HeroSection = () => {\r\n   return ( \r\n     <Section>\r\n       <Title>iPhone 14 Pro Max</Title>\r\n       <TextContainer>\r\n-        \r\n+        <span>So.Cold.</span>\r\n+        <span>So.Cold.</span>\r\n       </TextContainer>\r\n     </Section>\r\n    );\r\n }\r\n"
+                },
+                {
+                    "date": 1685360621298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from \"react\";\r\n import styled from \"styled-components\";\r\n-\r\n+import backgroundVideo from '';\r\n const Section = styled.section`\r\n width:100vw;\r\n height:100vh;\r\n position:relative;\r\n@@ -47,9 +47,9 @@\n     <Section>\r\n       <Title>iPhone 14 Pro Max</Title>\r\n       <TextContainer>\r\n         <span>So.Cold.</span>\r\n-        <span>So.Cold.</span>\r\n+        <span>So.Bold.</span>\r\n       </TextContainer>\r\n     </Section>\r\n    );\r\n }\r\n"
+                },
+                {
+                    "date": 1685360637633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from \"react\";\r\n import styled from \"styled-components\";\r\n-import backgroundVideo from '';\r\n+import backgroundVideo from '../assets/video/Ink - 21536.mp4';\r\n const Section = styled.section`\r\n width:100vw;\r\n height:100vh;\r\n position:relative;\r\n"
+                },
+                {
+                    "date": 1685360701849,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,8 +44,9 @@\n \r\n const HeroSection = () => {\r\n   return ( \r\n     <Section>\r\n+      <video src={backgroundVideo} type=\"video/mp4\" autoPlay muted loop/>\r\n       <Title>iPhone 14 Pro Max</Title>\r\n       <TextContainer>\r\n         <span>So.Cold.</span>\r\n         <span>So.Bold.</span>\r\n"
+                },
+                {
+                    "date": 1685360812544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n   background-image: linear-gradient(-45deg, var(--gradient));\r\n   background-clip: text;\r\n   -webkit-background-clip: text;\r\n   -webkit-text-fill-color: transparent;\r\n-\r\n+  z-index:1;\r\n   span{\r\n     font-size:var(--fontxxxl);\r\n     text-transform:uppercase;\r\n     font-weight:600;\r\n"
+                },
+                {
+                    "date": 1685360820105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n   display: flex;\r\n   justify-content: space-between;\r\n   align-items: center;\r\n \r\n-  background-image: linear-gradient(-45deg, var(--gradient));\r\n+  background-image: linear-gradient(45deg, var(--gradient));\r\n   background-clip: text;\r\n   -webkit-background-clip: text;\r\n   -webkit-text-fill-color: transparent;\r\n   z-index:1;\r\n"
+                },
+                {
+                    "date": 1685360914103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,12 +41,31 @@\n     padding:2rem;\r\n   }\r\n `\r\n \r\n+const VideoContainer = styled.div`\r\n+  width:100vw;\r\n+  min-height:100vh;\r\n+\r\n+  position: absolute;\r\n+  top:0;\r\n+  left:0;\r\n+  z-index:0;\r\n+\r\n+  video{\r\n+    width:100%;\r\n+    height:100%;\r\n+    object-fit:cover;\r\n+    object-position:bottom;\r\n+  }\r\n+`\r\n+\r\n const HeroSection = () => {\r\n   return ( \r\n     <Section>\r\n+    <VideoContainer>\r\n       <video src={backgroundVideo} type=\"video/mp4\" autoPlay muted loop/>\r\n+    </VideoContainer>\r\n       <Title>iPhone 14 Pro Max</Title>\r\n       <TextContainer>\r\n         <span>So.Cold.</span>\r\n         <span>So.Bold.</span>\r\n"
+                },
+                {
+                    "date": 1685360952395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,21 +42,21 @@\n   }\r\n `\r\n \r\n const VideoContainer = styled.div`\r\n-  width:100vw;\r\n-  min-height:100vh;\r\n+  width: 100vw;\r\n+  min-height: 100vh;\r\n \r\n   position: absolute;\r\n-  top:0;\r\n-  left:0;\r\n-  z-index:0;\r\n+  top: 0;\r\n+  left: 0;\r\n+  z-index: 0;\r\n \r\n-  video{\r\n-    width:100%;\r\n-    height:100%;\r\n-    object-fit:cover;\r\n-    object-position:bottom;\r\n+  video {\r\n+    width: 100%;\r\n+    height: 100vh;\r\n+    object-fit: cover;\r\n+    object-position: bottom;\r\n   }\r\n `\r\n \r\n const HeroSection = () => {\r\n"
+                }
+            ],
+            "date": 1685359738573,
+            "name": "Commit-0",
+            "content": "const HeroSection = () => {\r\n  return ( \r\n    <div>\r\n      HeroSection\r\n    </div>\r\n   );\r\n}\r\n \r\nexport default HeroSection;"
+        }
+    ]
+}
