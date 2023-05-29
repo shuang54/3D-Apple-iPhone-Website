@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/styles/GlobalStyle.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1685320885693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1685320885693,
+            "name": "Commit-0",
+            "content": "import { createGlobalStyle } from \"styled-components\";\r\nimport fontLight from \"../assets/fonts/SourceSansPro-Light.ttf\"\r\nimport fontRegular from \"../assets/fonts/SourceSansPro-Regular.ttf\"\r\n\r\nexport const GlobalStyle = createGlobalStyle`\r\n*,*::before,*::after{\r\n  margin:0;\r\n  padding:0;\r\n}\r\n\r\nh1,h2,h3,h4,h5,h6{\r\n  margin:0;\r\n  padding:0;\r\n}\r\n\r\n@font-face{\r\n  font-family:'Source Sans Pro light';\r\n  src: local('Source Sans Pro light'),url(${fontLight}) format(\"truetype\");\r\n  font-display:swap;\r\n  font-style:normal;\r\n}\r\n@font-face{\r\n  font-family:'Source Sans Pro';\r\n  src: local('Source Sans Pro'),url(${fontRegular}) format(\"truetype\");\r\n  font-display:swap;\r\n  font-style:normal;\r\n}\r\n\r\nbody{\r\n  font-family: \"Source Sans Pro\",sans-serif;\r\n  overflow-x:hidden;\r\n}\r\n\r\n`"
+        }
+    ]
+}
