@@ -1,0 +1,98 @@
+{
+    "sourceFile": "src/sections/PhoneModel.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 20,
+            "patches": [
+                {
+                    "date": 1685361080595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685361355962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,27 @@\n+import { Canvas } from '@react-three/fiber'\r\n import React from 'react'\r\n+import styled from 'styled-components'\r\n \r\n+const Container = styled.div`\r\n+  width:100vw;\r\n+  height:100vh;\r\n+\r\n+  position:fixed;\r\n+  top:0;\r\n+  z-index:1;\r\n+  background-color:transparent;\r\n+`\r\n+\r\n const PhoneModel = () => {\r\n   return (\r\n-    <div>PhoneModel</div>\r\n+    <Container>\r\n+      <Canvas>\r\n+        <mesh>\r\n+          <boxGeometry/>\r\n+        </mesh>\r\n+      </Canvas>\r\n+    </Container>\r\n   )\r\n }\r\n \r\n export default PhoneModel\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685361524492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+import { OrbitControls } from '@react-three/drei'\r\n import { Canvas } from '@react-three/fiber'\r\n import React from 'react'\r\n import styled from 'styled-components'\r\n \r\n@@ -18,8 +19,9 @@\n       <Canvas>\r\n         <mesh>\r\n           <boxGeometry/>\r\n         </mesh>\r\n+        <OrbitControls/>\r\n       </Canvas>\r\n     </Container>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685361553184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,12 @@\n   return (\r\n     <Container>\r\n       <Canvas>\r\n         <mesh>\r\n-          <boxGeometry/>\r\n+          <boxGeometry />\r\n         </mesh>\r\n-        <OrbitControls/>\r\n+        {/* 轨道控制:box可以旋转 */}\r\n+        <OrbitControls />\r\n       </Canvas>\r\n     </Container>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685361562497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n     <Container>\r\n       <Canvas>\r\n         <mesh>\r\n           <boxGeometry />\r\n+          \r\n         </mesh>\r\n         {/* 轨道控制:box可以旋转 */}\r\n         <OrbitControls />\r\n       </Canvas>\r\n"
+                },
+                {
+                    "date": 1685361583431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     <Container>\r\n       <Canvas>\r\n         <mesh>\r\n           <boxGeometry />\r\n-          \r\n+          <meshStandardMaterial color={red}/>\r\n         </mesh>\r\n         {/* 轨道控制:box可以旋转 */}\r\n         <OrbitControls />\r\n       </Canvas>\r\n"
+                },
+                {
+                    "date": 1685361590302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     <Container>\r\n       <Canvas>\r\n         <mesh>\r\n           <boxGeometry />\r\n-          <meshStandardMaterial color={red}/>\r\n+          <meshStandardMaterial color=\"red\"/>\r\n         </mesh>\r\n         {/* 轨道控制:box可以旋转 */}\r\n         <OrbitControls />\r\n       </Canvas>\r\n"
+                },
+                {
+                    "date": 1685361667275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,12 @@\n const PhoneModel = () => {\r\n   return (\r\n     <Container>\r\n       <Canvas>\r\n+        <ambientLight intensity={1.25}/>\r\n         <mesh>\r\n           <boxGeometry />\r\n+          {/* 改变box颜色 */}\r\n           <meshStandardMaterial color=\"red\"/>\r\n         </mesh>\r\n         {/* 轨道控制:box可以旋转 */}\r\n         <OrbitControls />\r\n"
+                },
+                {
+                    "date": 1685361692250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n const PhoneModel = () => {\r\n   return (\r\n     <Container>\r\n       <Canvas>\r\n+      {/* 环境光 */}\r\n         <ambientLight intensity={1.25}/>\r\n         <mesh>\r\n           <boxGeometry />\r\n           {/* 改变box颜色 */}\r\n"
+                },
+                {
+                    "date": 1685361757214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,10 @@\n     <Container>\r\n       <Canvas>\r\n       {/* 环境光 */}\r\n         <ambientLight intensity={1.25}/>\r\n+        {/* 定向光 */}\r\n+        <directionalLight position={[1,0,0]}/>\r\n         <mesh>\r\n           <boxGeometry />\r\n           {/* 改变box颜色 */}\r\n           <meshStandardMaterial color=\"red\"/>\r\n"
+                },
+                {
+                    "date": 1685362157862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,10 @@\n const PhoneModel = () => {\r\n   return (\r\n     <Container>\r\n       <Canvas>\r\n-      {/* 环境光 */}\r\n-        <ambientLight intensity={1.25}/>\r\n+        {/* 环境光 */}\r\n+        <ambientLight intensity={2.25}/>\r\n         {/* 定向光 */}\r\n         <directionalLight position={[1,0,0]}/>\r\n         <mesh>\r\n           <boxGeometry />\r\n"
+                },
+                {
+                    "date": 1685362187824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,11 @@\n   return (\r\n     <Container>\r\n       <Canvas>\r\n         {/* 环境光 */}\r\n-        <ambientLight intensity={2.25}/>\r\n+        <ambientLight intensity={1.25}/>\r\n         {/* 定向光 */}\r\n-        <directionalLight position={[1,0,0]}/>\r\n+        <directionalLight position={0.4}/>\r\n         <mesh>\r\n           <boxGeometry />\r\n           {/* 改变box颜色 */}\r\n           <meshStandardMaterial color=\"red\"/>\r\n"
+                },
+                {
+                    "date": 1685364296513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,13 +20,9 @@\n         {/* 环境光 */}\r\n         <ambientLight intensity={1.25}/>\r\n         {/* 定向光 */}\r\n         <directionalLight position={0.4}/>\r\n-        <mesh>\r\n-          <boxGeometry />\r\n-          {/* 改变box颜色 */}\r\n-          <meshStandardMaterial color=\"red\"/>\r\n-        </mesh>\r\n+          <Model />\r\n         {/* 轨道控制:box可以旋转 */}\r\n         <OrbitControls />\r\n       </Canvas>\r\n     </Container>\r\n"
+                },
+                {
+                    "date": 1685364318845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { OrbitControls } from '@react-three/drei'\r\n import { Canvas } from '@react-three/fiber'\r\n import React from 'react'\r\n import styled from 'styled-components'\r\n-\r\n+import Model from '../assets/3D-Model/Scene.jsx'\r\n const Container = styled.div`\r\n   width:100vw;\r\n   height:100vh;\r\n \r\n"
+                },
+                {
+                    "date": 1685364449163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { OrbitControls } from '@react-three/drei'\r\n+import { Environment, OrbitControls } from '@react-three/drei'\r\n import { Canvas } from '@react-three/fiber'\r\n import React from 'react'\r\n import styled from 'styled-components'\r\n import Model from '../assets/3D-Model/Scene.jsx'\r\n@@ -20,9 +20,12 @@\n         {/* 环境光 */}\r\n         <ambientLight intensity={1.25}/>\r\n         {/* 定向光 */}\r\n         <directionalLight position={0.4}/>\r\n+        {/* 手机模型 */}\r\n           <Model />\r\n+          <Environment/>\r\n+\r\n         {/* 轨道控制:box可以旋转 */}\r\n         <OrbitControls />\r\n       </Canvas>\r\n     </Container>\r\n"
+                },
+                {
+                    "date": 1685364496274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         {/* 定向光 */}\r\n         <directionalLight position={0.4}/>\r\n         {/* 手机模型 */}\r\n           <Model />\r\n-          <Environment/>\r\n+          <Environment preset='sunset'/>\r\n \r\n         {/* 轨道控制:box可以旋转 */}\r\n         <OrbitControls />\r\n       </Canvas>\r\n"
+                },
+                {
+                    "date": 1685364565221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         {/* 定向光 */}\r\n         <directionalLight position={0.4}/>\r\n         {/* 手机模型 */}\r\n           <Model />\r\n-          <Environment preset='sunset'/>\r\n+          <Environment preset='night'/>\r\n \r\n         {/* 轨道控制:box可以旋转 */}\r\n         <OrbitControls />\r\n       </Canvas>\r\n"
+                },
+                {
+                    "date": 1685364580104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n \r\n const PhoneModel = () => {\r\n   return (\r\n     <Container>\r\n-      <Canvas>\r\n+      <Canvas camera={{fov:0.1}}>\r\n         {/* 环境光 */}\r\n         <ambientLight intensity={1.25}/>\r\n         {/* 定向光 */}\r\n         <directionalLight position={0.4}/>\r\n"
+                },
+                {
+                    "date": 1685364596693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n \r\n const PhoneModel = () => {\r\n   return (\r\n     <Container>\r\n-      <Canvas camera={{fov:0.1}}>\r\n+      <Canvas camera={{fov:14}}>\r\n         {/* 环境光 */}\r\n         <ambientLight intensity={1.25}/>\r\n         {/* 定向光 */}\r\n         <directionalLight position={0.4}/>\r\n"
+                },
+                {
+                    "date": 1685364645169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { Environment, OrbitControls } from '@react-three/drei'\r\n import { Canvas } from '@react-three/fiber'\r\n-import React from 'react'\r\n+import React, { Suspense } from 'react'\r\n import styled from 'styled-components'\r\n import Model from '../assets/3D-Model/Scene.jsx'\r\n const Container = styled.div`\r\n   width:100vw;\r\n@@ -15,16 +15,18 @@\n \r\n const PhoneModel = () => {\r\n   return (\r\n     <Container>\r\n-      <Canvas camera={{fov:14}}>\r\n+      <Canvas camera={{ fov: 14 }}>\r\n         {/* 环境光 */}\r\n-        <ambientLight intensity={1.25}/>\r\n+        <ambientLight intensity={1.25} />\r\n         {/* 定向光 */}\r\n-        <directionalLight position={0.4}/>\r\n-        {/* 手机模型 */}\r\n+        <directionalLight position={0.4} />\r\n+        <Suspense>\r\n+          {/* 手机模型 */}\r\n           <Model />\r\n-          <Environment preset='night'/>\r\n+        </Suspense>\r\n+        <Environment preset=\"night\" />\r\n \r\n         {/* 轨道控制:box可以旋转 */}\r\n         <OrbitControls />\r\n       </Canvas>\r\n"
+                },
+                {
+                    "date": 1685364673808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,14 +20,13 @@\n         {/* 环境光 */}\r\n         <ambientLight intensity={1.25} />\r\n         {/* 定向光 */}\r\n         <directionalLight position={0.4} />\r\n-        <Suspense>\r\n+        <Suspense fallback={null}>\r\n           {/* 手机模型 */}\r\n           <Model />\r\n         </Suspense>\r\n         <Environment preset=\"night\" />\r\n-\r\n         {/* 轨道控制:box可以旋转 */}\r\n         <OrbitControls />\r\n       </Canvas>\r\n     </Container>\r\n"
+                }
+            ],
+            "date": 1685361080595,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\n\r\nconst PhoneModel = () => {\r\n  return (\r\n    <div>PhoneModel</div>\r\n  )\r\n}\r\n\r\nexport default PhoneModel"
+        }
+    ]
+}
