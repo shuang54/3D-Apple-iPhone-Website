@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 12,
+            "activePatchIndex": 14,
             "patches": [
                 {
                     "date": 1685507184767,
@@ -56,6 +56,14 @@
                 {
                     "date": 1685508431201,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,8 @@\n `\r\n \r\n \r\n const BatterySection = () => {\r\n-const BatterySection = () => {\r\n   const battery = useRef(null);\r\n   let elements = gsap.utils.selector(battery);\r\n \r\n   useLayoutEffect(() => {\r\n"
+                },
+                {
+                    "date": 1685530942123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,9 +85,9 @@\n     return () => {};\r\n   }, []);\r\n \r\n   return (\r\n-    <Section>\r\n+    <Section id='batter'>\r\n       <Title>Go all day with single charge...</Title>\r\n       <Battery ref={battery}>\r\n         <li />\r\n         <li />\r\n"
+                },
+                {
+                    "date": 1685530973323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,9 +85,9 @@\n     return () => {};\r\n   }, []);\r\n \r\n   return (\r\n-    <Section id='batter'>\r\n+    <Section id=\"battery\">\r\n       <Title>Go all day with single charge...</Title>\r\n       <Battery ref={battery}>\r\n         <li />\r\n         <li />\r\n"
                 }
             ],
             "date": 1685507184767,

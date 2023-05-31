@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 14,
+            "activePatchIndex": 16,
             "patches": [
                 {
                     "date": 1685320988341,
@@ -64,6 +64,14 @@
                 {
                     "date": 1685509685127,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n       <DesignSection />\r\n       <DisplaySection />\r\n       <ProcessorSection />\r\n       <BatterySection />\r\n-      <ColorSection />\r\n+      <ColorSection/>\r\n     </>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685530876028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   return (\r\n     <>\r\n       <GlobalStyle />\r\n       <Quote />\r\n-      {/* <PhoneModel/> */}\r\n+      <PhoneModel/>\r\n       <HeroSection />\r\n       <DesignSection />\r\n       <DisplaySection />\r\n       <ProcessorSection />\r\n"
+                },
+                {
+                    "date": 1685533199841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import BatterySection from \"./sections/BatterySection\";\r\n+import CameraSection from \"./sections/CameraSection\";\r\n import ColorSection from \"./sections/ColorSection\";\r\n import DesignSection from \"./sections/DesignSection\";\r\n import DisplaySection from \"./sections/DisplaySection\";\r\n import HeroSection from \"./sections/HeroSection\";\r\n@@ -19,8 +20,9 @@\n       <DisplaySection />\r\n       <ProcessorSection />\r\n       <BatterySection />\r\n       <ColorSection/>\r\n+      <CameraSection/>\r\n     </>\r\n   )\r\n }\r\n \r\n"
                 }
             ],
             "date": 1685320988341,

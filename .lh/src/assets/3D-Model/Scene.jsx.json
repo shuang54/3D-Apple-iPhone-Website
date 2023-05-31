@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 18,
+            "activePatchIndex": 35,
             "patches": [
                 {
                     "date": 1685364360623,
@@ -80,6 +80,74 @@
                 {
                     "date": 1685367480180,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,9 @@\n       }\n     })\n     \n     t1.fromTo(camera.position,{y:2},{y:0})\n+    t1.to(camera.position,{x:0},{x:0})\n   }, [])\n   console.log(camera)\n \n   return (\n"
+                },
+                {
+                    "date": 1685530974950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n     let t1 = gsap.timeline({\n       scrollTrigger:{\n         trigger:\"#phone-model\",\n         start:\"top top\",\n+        endTrigger:\"#battery\",\n         end:\"bottom+=500 bottom\",\n         markers:true\n       }\n     })\n"
+                },
+                {
+                    "date": 1685531023968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n       scrollTrigger:{\n         trigger:\"#phone-model\",\n         start:\"top top\",\n         endTrigger:\"#battery\",\n-        end:\"bottom+=500 bottom\",\n+        end:\"top top\",\n         markers:true\n       }\n     })\n     \n"
+                },
+                {
+                    "date": 1685531098475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n export default function Model({ ...props }) {\n   const group = useRef()\n   const { nodes, materials } = useGLTF('/scene.gltf')\n   let camera = useThree(state => state.camera)\n+  let scene = useThree(state => state.scene);\n   console.log(camera)\n   useLayoutEffect(() => {\n     let t1 = gsap.timeline({\n       scrollTrigger:{\n"
+                },
+                {
+                    "date": 1685531146806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n       }\n     })\n     \n     t1.fromTo(camera.position,{y:2},{y:0})\n-    t1.to(camera.position,{x:0},{x:0})\n+    t1.to(camera.rotation,{y:0.8})\n   }, [])\n   console.log(camera)\n \n   return (\n"
+                },
+                {
+                    "date": 1685531164107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n       }\n     })\n     \n     t1.fromTo(camera.position,{y:2},{y:0})\n-    t1.to(camera.rotation,{y:0.8})\n+    t1.to(scene.rotation, { y: 0.8 })\n   }, [])\n   console.log(camera)\n \n   return (\n"
+                },
+                {
+                    "date": 1685531235817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,10 @@\n         trigger:\"#phone-model\",\n         start:\"top top\",\n         endTrigger:\"#battery\",\n         end:\"top top\",\n-        markers:true\n+        markers:true,\n+        scrub:true,\n       }\n     })\n     \n     t1.fromTo(camera.position,{y:2},{y:0})\n"
+                },
+                {
+                    "date": 1685531331382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,10 +30,16 @@\n         scrub:true,\n       }\n     })\n     \n-    t1.fromTo(camera.position,{y:2},{y:0})\n-    t1.to(scene.rotation, { y: 0.8 })\n+    t1.fromTo(camera.position, { y: 2 }, { y: 0 })\n+      .to(scene.rotation, { y: 0.8 })\n+      .to(scene.rotation, { y: 3 })\n+      .to(scene.rotation, { z: 1.58 })\n+      .to(scene.position, { z: 4 })\n+      .to(scene.rotation, {y:0,z:0})\n+\n+\n   }, [])\n   console.log(camera)\n \n   return (\n"
+                },
+                {
+                    "date": 1685531384705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     t1.fromTo(camera.position, { y: 2 }, { y: 0 })\n       .to(scene.rotation, { y: 0.8 })\n       .to(scene.rotation, { y: 3 })\n       .to(scene.rotation, { z: 1.58 })\n-      .to(scene.position, { z: 4 })\n+      .to(camera.position, { z: 4 })\n       .to(scene.rotation, {y:0,z:0})\n \n \n   }, [])\n"
+                },
+                {
+                    "date": 1685531400739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n   let camera = useThree(state => state.camera)\n   let scene = useThree(state => state.scene);\n   console.log(camera)\n   useLayoutEffect(() => {\n+    camera.position.set()\n     let t1 = gsap.timeline({\n       scrollTrigger:{\n         trigger:\"#phone-model\",\n         start:\"top top\",\n"
+                },
+                {
+                    "date": 1685531410884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   let camera = useThree(state => state.camera)\n   let scene = useThree(state => state.scene);\n   console.log(camera)\n   useLayoutEffect(() => {\n-    camera.position.set()\n+    camera.position.set(0,2,6);\n     let t1 = gsap.timeline({\n       scrollTrigger:{\n         trigger:\"#phone-model\",\n         start:\"top top\",\n"
+                },
+                {
+                    "date": 1685531606917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,11 +36,13 @@\n       .to(scene.rotation, { y: 0.8 })\n       .to(scene.rotation, { y: 3 })\n       .to(scene.rotation, { z: 1.58 })\n       .to(camera.position, { z: 4 })\n-      .to(scene.rotation, {y:0,z:0})\n+      .to(scene.rotation, { y: 0, z: 0 })\n+      .to(camera.position, { z: 6, x: -1 })\n+      .to(scene.rotation, { z: 0, y: 6.3 })\n+      .to(camera.position, { x: 0.8, y: 0 })\n \n-\n   }, [])\n   console.log(camera)\n \n   return (\n"
+                },
+                {
+                    "date": 1685531713236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     camera.position.set(0,2,6);\n     let t1 = gsap.timeline({\n       scrollTrigger:{\n         trigger:\"#phone-model\",\n-        start:\"top top\",\n+        start:\"top+=200 top\",\n         endTrigger:\"#battery\",\n         end:\"top top\",\n         markers:true,\n         scrub:true,\n@@ -34,17 +34,17 @@\n     \n     t1.fromTo(camera.position, { y: 2 }, { y: 0 })\n       .to(scene.rotation, { y: 0.8 })\n       .to(scene.rotation, { y: 3 })\n-      .to(scene.rotation, { z: 1.58 })\n-      .to(camera.position, { z: 4 })\n-      .to(scene.rotation, { y: 0, z: 0 })\n-      .to(camera.position, { z: 6, x: -1 })\n-      .to(scene.rotation, { z: 0, y: 6.3 })\n-      .to(camera.position, { x: 0.8, y: 0 })\n+      .to(scene.rotation, { z: 1.58 }, 'key1')\n+      .to(camera.position, { z: 4 }, 'key1')\n+      .to(scene.rotation, { y: 0, z: 0 }, 'ke2')\n+      .to(camera.position, { z: 6, x: -1 }, 'key2')\n+      .to(scene.rotation, { z: 0, y: 6.3 }, 'key3')\n+      .to(camera.position, { x: 0.8, y: 0 }, 'key3')\n \n   }, [])\n-  console.log(camera)\n+  // console.log(camera)\n \n   return (\n     <group ref={group} {...props} dispose={null}>\n       <group scale={0.01}>\n"
+                },
+                {
+                    "date": 1685532250877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n         trigger:\"#phone-model\",\n         start:\"top+=200 top\",\n         endTrigger:\"#battery\",\n         end:\"top top\",\n-        markers:true,\n+        // markers:true,\n         scrub:true,\n       }\n     })\n     \n"
+                },
+                {
+                    "date": 1685532302196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,8 @@\n         trigger:\"#phone-model\",\n         start:\"top+=200 top\",\n         endTrigger:\"#battery\",\n         end:\"top top\",\n-        // markers:true,\n         scrub:true,\n       }\n     })\n     \n"
+                },
+                {
+                    "date": 1685532313099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n         trigger:\"#phone-model\",\n         start:\"top+=200 top\",\n         endTrigger:\"#battery\",\n         end:\"top top\",\n+        markers:true,\n         scrub:true,\n       }\n     })\n     \n"
+                },
+                {
+                    "date": 1685532328228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,10 @@\n         trigger:\"#phone-model\",\n         start:\"top+=200 top\",\n         endTrigger:\"#battery\",\n         end:\"top top\",\n+        scrub:true,\n         markers:true,\n-        scrub:true,\n       }\n     })\n     \n     t1.fromTo(camera.position, { y: 2 }, { y: 0 })\n"
+                },
+                {
+                    "date": 1685532460083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n   let scene = useThree(state => state.scene);\n   console.log(camera)\n   useLayoutEffect(() => {\n     camera.position.set(0,2,6);\n+    materials.Body.color.set('#9BB5CE');\n     let t1 = gsap.timeline({\n       scrollTrigger:{\n         trigger:\"#phone-model\",\n         start:\"top+=200 top\",\n"
                 }
             ],
             "date": 1685364360623,

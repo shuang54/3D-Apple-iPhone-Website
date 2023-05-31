@@ -1,7 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { AdaptiveDpr, AdaptiveEvents, Environment, useGLTF } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
 import gsap from 'gsap'
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { Suspense, useLayoutEffect, useRef } from 'react'
 import styled from 'styled-components'
+import Model2 from '../components/Scene2'
 
 const Section = styled.section`
   width: 100vw;
@@ -63,7 +66,7 @@ const ColorSection = () => {
   const rightRef = useRef(null)
   const leftRef = useRef(null)
   const textRef = useRef(null)
-
+const {  materials } = useGLTF('/scene.gltf')
     useLayoutEffect(() => {
       let Elem = sectionRef.current
       let rightElem = rightRef.current
@@ -72,6 +75,7 @@ const ColorSection = () => {
 
 
       let updateColor = (color, text, rgbColor) => {
+        materials.Body.color.set(color);
         textElem.innerText = text;
         rightElem.style.background = `rgba(${rgbColor},0.4)`
         leftElem.style.background = `rgba(${rgbColor},0.8)`
@@ -147,9 +151,20 @@ const ColorSection = () => {
     }, [])
   return (
     <Section ref={sectionRef}>
-      <Left ref={leftRef}></Left>
-      <Center ref={textRef}>Sierra blue</Center>
-      <Right ref={rightRef}></Right>
+      <Left ref={leftRef}/>
+      <Center ref={textRef} />
+      <Right ref={rightRef}/>
+      <Canvas camera={{ fov: 6.5 }}>
+        <ambientLight intensity={1.25} />
+        <directionalLight intensity={0.4} />
+        <Suspense fallback={null}>
+          <Model2 />
+        </Suspense>
+        <Environment preset="night" />
+        <AdaptiveDpr pixelated />
+        <AdaptiveEvents />
+        {/* <OrbitControls /> */}
+      </Canvas>
     </Section>
   )
 }

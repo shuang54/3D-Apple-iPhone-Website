@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 24,
+            "activePatchIndex": 25,
             "patches": [
                 {
                     "date": 1685361080595,
@@ -104,6 +104,10 @@
                 {
                     "date": 1685367558663,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n import styled from 'styled-components'\r\n import { Canvas } from '@react-three/fiber'\r\n import { AdaptiveDpr, AdaptiveEvents, Environment } from '@react-three/drei'\r\n-import Model from '../components/Scene'\r\n+import Model from '../assets/3D-Model/Scene.jsx'\r\n import { Suspense } from 'react'\r\n \r\n const Container = styled.div`\r\n   width: 100vw;\r\n"
+                },
+                {
+                    "date": 1685532644515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n import styled from 'styled-components'\r\n import { Canvas } from '@react-three/fiber'\r\n import { AdaptiveDpr, AdaptiveEvents, Environment } from '@react-three/drei'\r\n-import Model from '../assets/3D-Model/Scene.jsx'\r\n+import Model from '../components/Scene.jsx'\r\n import { Suspense } from 'react'\r\n \r\n const Container = styled.div`\r\n   width: 100vw;\r\n"
                 }
             ],
             "date": 1685361080595,
