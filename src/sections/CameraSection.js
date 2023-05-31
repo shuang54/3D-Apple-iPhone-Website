@@ -1,8 +1,11 @@
-import React, { useLayoutEffect, useRef } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import gsap from 'gsap'
+import React from 'react'
+import { useLayoutEffect } from 'react'
+import { useRef } from 'react'
+import styled from 'styled-components'
 import v1 from '../assets/video/Scuba Diving - 699.mp4'
 import v2 from '../assets/video/Skate - 49791.mp4'
-import styled from 'styled-components'
-import { gsap } from 'gsap'
 
 const Section = styled.section`
   width: 100vw;
@@ -39,6 +42,7 @@ const V2 = styled.video`
     top: 10%;
   }
 `
+
 const TitleContainer = styled.div`
   width: 50%;
   height: 100%;
@@ -83,40 +87,42 @@ const Title = styled.h1`
   }
 `
 
-
 const CameraSection = () => {
   const sectionRef = useRef(null)
-  const videoRef1 = useRef(null);
-  const videoRef2 = useRef(null);
+
+  const videoRef1 = useRef(null)
+  const videoRef2 = useRef(null)
   const titleRef = useRef(null)
+
+  let elements = gsap.utils.selector(titleRef)
 
   useLayoutEffect(() => {
     const Elem = sectionRef.current
-    const videoElem = videoRef1.current
+    const video1Elem = videoRef1.current
     const video2Elem = videoRef2.current
 
-    let elements = gsap.utils.selector(titleRef)
-
+    // pin the section
     gsap.to(Elem, {
       scrollTrigger: {
         trigger: Elem,
         start: 'top top',
         end: `bottom+=500 bottom`,
-        scrub: true,
+        scrub: 1,
         pin: true,
         pinSpacing: true
       }
     })
+
     let t2 = gsap
       .timeline({
         scrollTrigger: {
           trigger: Elem,
           start: 'top top',
           end: `bottom+=500 bottom`,
-          scrub: true
+          scrub: 1
         }
       })
-      .to(videoElem, { scale: 0.3 }, 'key1')
+      .to(video1Elem, { scale: 0.3 }, 'key1')
       .to(video2Elem, { scale: 0.6 }, 'key1')
 
     elements('h1').forEach((el) =>
@@ -144,6 +150,7 @@ const CameraSection = () => {
       if (t2) t2.kill()
     }
   }, [])
+
   return (
     <Section ref={sectionRef}>
       <V1 ref={videoRef1} src={v1} type="video/mp4" autoPlay muted loop />

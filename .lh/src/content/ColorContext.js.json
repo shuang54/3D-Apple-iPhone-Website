@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/content/ColorContext.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1685536105913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1685536105913,
+            "name": "Commit-0",
+            "content": "import { useState } from 'react'\r\nimport { createContext } from 'react'\r\nimport { useGLTF } from '@react-three/drei'\r\n\r\nexport const ColorContext = createContext({})\r\n\r\nexport const ColorContextProvider = ({ children }) => {\r\n  const { materials } = useGLTF('/scene.gltf')\r\n  const [currentColor, serCurrentColor] = useState({\r\n    color: '#9BB5CE',\r\n    text: 'Sierra Blue',\r\n    rgbColor: '155, 181, 206'\r\n  })\r\n\r\n  let changeColorContext = (colorObj) => {\r\n    materials.Body.color.set(colorObj.color)\r\n    serCurrentColor(colorObj)\r\n  }\r\n\r\n  return (\r\n    <ColorContext.Provider value={{ currentColor, changeColorContext }}>\r\n      {children}\r\n    </ColorContext.Provider>\r\n  )\r\n}\r\n"
+        }
+    ]
+}

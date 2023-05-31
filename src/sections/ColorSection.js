@@ -6,6 +6,7 @@ import React, { Suspense, useLayoutEffect, useRef } from 'react'
 import styled from 'styled-components'
 import Model2 from '../components/Scene2'
 
+
 const Section = styled.section`
   width: 100vw;
   height: 100vh;
@@ -14,7 +15,6 @@ const Section = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 `
 
 const Left = styled.div`
@@ -57,8 +57,6 @@ const Center = styled.div`
     top: 2rem;
     transform: translate(-50%, 0%) rotate(0deg);
   }
-
-
 `
 
 const ColorSection = () => {
@@ -160,9 +158,9 @@ const {  materials } = useGLTF('/scene.gltf')
         <Suspense fallback={null}>
           <Model2 />
         </Suspense>
-        <Environment preset="night" />
+        {/* <Environment preset="night" />
         <AdaptiveDpr pixelated />
-        <AdaptiveEvents />
+        <AdaptiveEvents /> */}
         {/* <OrbitControls /> */}
       </Canvas>
     </Section>

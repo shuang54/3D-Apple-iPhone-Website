@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 16,
+            "activePatchIndex": 21,
             "patches": [
                 {
                     "date": 1685320988341,
@@ -72,6 +72,26 @@
                 {
                     "date": 1685533199841,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import BatterySection from \"./sections/BatterySection\";\r\n+import CameraSection from \"./sections/CameraSection\";\r\n import ColorSection from \"./sections/ColorSection\";\r\n import DesignSection from \"./sections/DesignSection\";\r\n import DisplaySection from \"./sections/DisplaySection\";\r\n import HeroSection from \"./sections/HeroSection\";\r\n@@ -19,8 +20,9 @@\n       <DisplaySection />\r\n       <ProcessorSection />\r\n       <BatterySection />\r\n       <ColorSection/>\r\n+      <CameraSection/>\r\n     </>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685534633807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import DesignSection from \"./sections/DesignSection\";\r\n import DisplaySection from \"./sections/DisplaySection\";\r\n import HeroSection from \"./sections/HeroSection\";\r\n import PhoneModel from \"./sections/PhoneModel\";\r\n+import PricingSection from \"./sections/PricingSection\";\r\n import ProcessorSection from \"./sections/ProcessorSection\";\r\n import Quote from \"./sections/Quote\";\r\n import { GlobalStyle } from \"./styles/GlobalStyle\"\r\n \r\n@@ -21,8 +22,9 @@\n       <ProcessorSection />\r\n       <BatterySection />\r\n       <ColorSection/>\r\n       <CameraSection/>\r\n+      <PricingSection/>\r\n     </>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685535443630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n       <DesignSection />\r\n       <DisplaySection />\r\n       <ProcessorSection />\r\n       <BatterySection />\r\n-      <ColorSection/>\r\n+      {/* <ColorSection/> */}\r\n       <CameraSection/>\r\n       <PricingSection/>\r\n     </>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685535456740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n       <DesignSection />\r\n       <DisplaySection />\r\n       <ProcessorSection />\r\n       <BatterySection />\r\n-      {/* <ColorSection/> */}\r\n+      <ColorSection/>\r\n       <CameraSection/>\r\n       <PricingSection/>\r\n     </>\r\n   )\r\n"
+                },
+                {
+                    "date": 1685535712091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n   return (\r\n     <>\r\n       <GlobalStyle />\r\n       <Quote />\r\n-      <PhoneModel/>\r\n+      {/* <PhoneModel/> */}\r\n       <HeroSection />\r\n       <DesignSection />\r\n       <DisplaySection />\r\n       <ProcessorSection />\r\n"
+                },
+                {
+                    "date": 1685536411907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+import { ColorContextProvider } from \"./context/ColorContext\";\r\n import BatterySection from \"./sections/BatterySection\";\r\n import CameraSection from \"./sections/CameraSection\";\r\n import ColorSection from \"./sections/ColorSection\";\r\n import DesignSection from \"./sections/DesignSection\";\r\n@@ -20,11 +21,13 @@\n       <DesignSection />\r\n       <DisplaySection />\r\n       <ProcessorSection />\r\n       <BatterySection />\r\n-      <ColorSection/>\r\n-      <CameraSection/>\r\n-      <PricingSection/>\r\n+      <ColorContextProvider>\r\n+        <ColorSection />\r\n+        <CameraSection />\r\n+        <PricingSection />\r\n+      </ColorContextProvider>\r\n     </>\r\n   )\r\n }\r\n \r\n"
                 }
             ],
             "date": 1685320988341,
