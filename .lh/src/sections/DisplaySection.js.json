@@ -1,0 +1,114 @@
+{
+    "sourceFile": "src/sections/DisplaySection.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 24,
+            "patches": [
+                {
+                    "date": 1685407125500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685407158847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+const DisplaySection = () => {\r\n+  return <div>DisplaySection</div>\r\n+}\r\n+ \r\n+export default DisplaySection;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685407314925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,20 @@\n+import React from \"react\";\r\n+import styled from \"styled-components\";\r\n+\r\n+const Section = styled.section`\r\n+  width:100vw;\r\n+  height:200vh;\r\n+  position:relative;\r\n+\r\n+  display:flex;\r\n+  justify-content:space-around;\r\n+  flex-direction:column;\r\n+\r\n+  background-color:var(--dark);\r\n+  color:var(--white);\r\n+`\r\n+\r\n const DisplaySection = () => {\r\n   return <div>DisplaySection</div>\r\n }\r\n  \r\n"
+                },
+                {
+                    "date": 1685407328824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,11 @@\n   color:var(--white);\r\n `\r\n \r\n const DisplaySection = () => {\r\n-  return <div>DisplaySection</div>\r\n+  return (\r\n+\r\n+    <Section>DisplaySection</Section>\r\n+    )\r\n }\r\n  \r\n export default DisplaySection;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685407447835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,13 +12,19 @@\n \r\n   background-color:var(--dark);\r\n   color:var(--white);\r\n `\r\n-\r\n+const MainTitle =styled.h1`\r\n+  font-size:var(--fontBig);\r\n+  font-family:var(--fontL);\r\n+`\r\n const DisplaySection = () => {\r\n   return (\r\n-\r\n-    <Section>DisplaySection</Section>\r\n+    <Section>\r\n+      <MainTitle>\r\n+        Immersive <br /> Display\r\n+      </MainTitle>\r\n+    </Section>\r\n     )\r\n }\r\n  \r\n export default DisplaySection;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685407486640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,11 +12,15 @@\n \r\n   background-color:var(--dark);\r\n   color:var(--white);\r\n `\r\n-const MainTitle =styled.h1`\r\n-  font-size:var(--fontBig);\r\n-  font-family:var(--fontL);\r\n+const MainTitle = styled.h1`\r\n+  font-size: var(--fontBig);\r\n+  font-family: var(--fontL);\r\n+  background-image: linear-gradient(-45deg, var(--gradient));\r\n+  background-clip: text;\r\n+  -webkit-background-clip: text;\r\n+  -webkit-text-fill-color: transparent;\r\n `\r\n const DisplaySection = () => {\r\n   return (\r\n     <Section>\r\n"
+                },
+                {
+                    "date": 1685407651778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,14 @@\n     <Section>\r\n       <MainTitle>\r\n         Immersive <br /> Display\r\n       </MainTitle>\r\n+      <TextBlockRight>\r\n+        <Title>Super Ratine XDR Display</Title>\r\n+        <Text>\r\n+          Lorem ipsum, dolor sit amet consectetur \r\n+        </Text>\r\n+      </TextBlockRight>\r\n     </Section>\r\n     )\r\n }\r\n  \r\n"
+                },
+                {
+                    "date": 1685407682622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,10 @@\n       </MainTitle>\r\n       <TextBlockRight>\r\n         <Title>Super Ratine XDR Display</Title>\r\n         <Text>\r\n-          Lorem ipsum, dolor sit amet consectetur \r\n+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.\r\n+          Necessitatibus dignissimos ipsam.\r\n         </Text>\r\n       </TextBlockRight>\r\n     </Section>\r\n     )\r\n"
+                },
+                {
+                    "date": 1685407776578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,18 @@\n   background-clip: text;\r\n   -webkit-background-clip: text;\r\n   -webkit-text-fill-color: transparent;\r\n `\r\n+const TextBlockRight = styled.div`\r\n+\r\n+`\r\n+const Title = styled.div`\r\n+\r\n+`\r\n+\r\n+const Text = styled.div`\r\n+\r\n+`\r\n const DisplaySection = () => {\r\n   return (\r\n     <Section>\r\n       <MainTitle>\r\n"
+                },
+                {
+                    "date": 1685407876225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,15 +21,23 @@\n   -webkit-background-clip: text;\r\n   -webkit-text-fill-color: transparent;\r\n `\r\n const TextBlockRight = styled.div`\r\n-\r\n+  display:flex;\r\n+  flex-direction:column;\r\n+  align-items:flex-end;\r\n+  width:50%;\r\n `\r\n const Title = styled.div`\r\n-\r\n+  font-size:var(--fontlg);\r\n+  margin-bottom:1rem;\r\n `\r\n \r\n const Text = styled.div`\r\n+  font-size: var(--fontxs);\r\n+  margin-bottom: 0.5rem;\r\n+  color:var(--grayLight);\r\n+  width:55%;\r\n \r\n `\r\n const DisplaySection = () => {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1685407979550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,14 @@\n   flex-direction:column;\r\n   align-items:flex-end;\r\n   width:50%;\r\n `\r\n+const TextBlockLeft = styled.div`\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+  align-items: flex-start;\r\n+  width: 50%;\r\n+`\r\n const Title = styled.div`\r\n   font-size:var(--fontlg);\r\n   margin-bottom:1rem;\r\n `\r\n@@ -51,9 +57,16 @@\n           Lorem ipsum, dolor sit amet consectetur adipisicing elit.\r\n           Necessitatibus dignissimos ipsam.\r\n         </Text>\r\n       </TextBlockRight>\r\n+      <TextBlockLeft ref={container}>\r\n+        <Title>Big is better</Title>\r\n+        <Text>\r\n+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.\r\n+          Necessitatibus dignissimos ipsam.\r\n+        </Text>\r\n+      </TextBlockLeft>\r\n     </Section>\r\n-    )\r\n+  )\r\n }\r\n  \r\n export default DisplaySection;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685407997098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n           Lorem ipsum, dolor sit amet consectetur adipisicing elit.\r\n           Necessitatibus dignissimos ipsam.\r\n         </Text>\r\n       </TextBlockRight>\r\n-      <TextBlockLeft ref={container}>\r\n+      <TextBlockLeft>\r\n         <Title>Big is better</Title>\r\n         <Text>\r\n           Lorem ipsum, dolor sit amet consectetur adipisicing elit.\r\n           Necessitatibus dignissimos ipsam.\r\n"
+                },
+                {
+                    "date": 1685408095210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,14 @@\n   flex-direction:column;\r\n \r\n   background-color:var(--dark);\r\n   color:var(--white);\r\n+\r\n+  &>*:nth-child(even){\r\n+    align-self:flex-end;\r\n+    margin-right:4rem;\r\n+    text-align:right;\r\n+  }\r\n `\r\n const MainTitle = styled.h1`\r\n   font-size: var(--fontBig);\r\n   font-family: var(--fontL);\r\n"
+                },
+                {
+                    "date": 1685408141207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,11 @@\n     align-self:flex-end;\r\n     margin-right:4rem;\r\n     text-align:right;\r\n   }\r\n+  &>*:nth-child(odd){\r\n+    margin-left:4rem;\r\n+  }\r\n `\r\n const MainTitle = styled.h1`\r\n   font-size: var(--fontBig);\r\n   font-family: var(--fontL);\r\n"
+                },
+                {
+                    "date": 1685408308944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,8 +73,13 @@\n           Lorem ipsum, dolor sit amet consectetur adipisicing elit.\r\n           Necessitatibus dignissimos ipsam.\r\n         </Text>\r\n       </TextBlockLeft>\r\n+\r\n+      <TextContainer>\r\n+        <div>Tougher then ever!</div>\r\n+        <div>Every touch matters.</div>\r\n+      </TextContainer>\r\n     </Section>\r\n   )\r\n }\r\n  \r\n"
+                },
+                {
+                    "date": 1685408373150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,8 +53,18 @@\n   color:var(--grayLight);\r\n   width:55%;\r\n \r\n `\r\n+const TextContainer = styled.div`\r\n+  width:100%;\r\n+  display:flex;\r\n+  flex-direction:column;\r\n+  justify-content:center;\r\n+  transform:rotate(-25deg);\r\n+  z-index:1;\r\n+  margin-bottom:4rem;\r\n+`\r\n+\r\n const DisplaySection = () => {\r\n   return (\r\n     <Section>\r\n       <MainTitle>\r\n"
+                },
+                {
+                    "date": 1685408389636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,10 +85,10 @@\n         </Text>\r\n       </TextBlockLeft>\r\n \r\n       <TextContainer>\r\n-        <div>Tougher then ever!</div>\r\n-        <div>Every touch matters.</div>\r\n+        <MovingText>Tougher then ever!</MovingText>\r\n+        <MovingText>Every touch matters.</MovingText>\r\n       </TextContainer>\r\n     </Section>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685408417355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,11 @@\n   transform:rotate(-25deg);\r\n   z-index:1;\r\n   margin-bottom:4rem;\r\n `\r\n-\r\n+const MovingText = styled.h1`\r\n+  font-size:var(--fontBig);\r\n+`\r\n const DisplaySection = () => {\r\n   return (\r\n     <Section>\r\n       <MainTitle>\r\n"
+                },
+                {
+                    "date": 1685408442905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,14 @@\n   z-index:1;\r\n   margin-bottom:4rem;\r\n `\r\n const MovingText = styled.h1`\r\n-  font-size:var(--fontBig);\r\n+  font-size: var(--fontBig);\r\n+  font-family: var(--fontL);\r\n+  background-image: linear-gradient(-45deg, var(--gradient));\r\n+  background-clip: text;\r\n+  -webkit-background-clip: text;\r\n+  -webkit-text-fill-color: transparent;\r\n `\r\n const DisplaySection = () => {\r\n   return (\r\n     <Section>\r\n"
+                },
+                {
+                    "date": 1685408475034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,8 +58,9 @@\n   width:100%;\r\n   display:flex;\r\n   flex-direction:column;\r\n   justify-content:center;\r\n+  align-items:center;\r\n   transform:rotate(-25deg);\r\n   z-index:1;\r\n   margin-bottom:4rem;\r\n `\r\n"
+                },
+                {
+                    "date": 1685492738479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,8 +72,30 @@\n   -webkit-background-clip: text;\r\n   -webkit-text-fill-color: transparent;\r\n `\r\n const DisplaySection = () => {\r\n+    const container = useRef(null)\r\n+    const textOne = useRef(null)\r\n+    const textTwo = useRef(null)\r\n+\r\n+    useLayoutEffect(() => {\r\n+      let t1 = gsap\r\n+        .timeline({\r\n+          scrollTrigger: {\r\n+            trigger: container.current,\r\n+            start: 'top-=500 top',\r\n+            end: 'bottom top',\r\n+            // 向上滑动时，有动画\r\n+            scrub: true\r\n+          }\r\n+        })\r\n+        .fromTo(textOne.current, { x: 0 }, { x: '10%' }, 'key1')\r\n+        .fromTo(textTwo.current, { x: 0 }, { x: '-10%' }, 'key1')\r\n+      return () => {\r\n+        if (t1) t1.kill()\r\n+      }\r\n+    }, [])\r\n+\r\n   return (\r\n     <Section>\r\n       <MainTitle>\r\n         Immersive <br /> Display\r\n"
+                },
+                {
+                    "date": 1685492766949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n-import React from \"react\";\r\n+import { gsap } from \"gsap\";\r\n+import React, { useLayoutEffect, useRef } from \"react\";\r\n import styled from \"styled-components\";\r\n \r\n const Section = styled.section`\r\n   width:100vw;\r\n"
+                },
+                {
+                    "date": 1685492804916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,9 +96,9 @@\n       }\r\n     }, [])\r\n \r\n   return (\r\n-    <Section>\r\n+    <Section ref={container}>\r\n       <MainTitle>\r\n         Immersive <br /> Display\r\n       </MainTitle>\r\n       <TextBlockRight>\r\n@@ -107,9 +107,9 @@\n           Lorem ipsum, dolor sit amet consectetur adipisicing elit.\r\n           Necessitatibus dignissimos ipsam.\r\n         </Text>\r\n       </TextBlockRight>\r\n-      <TextBlockLeft>\r\n+      <TextBlockLeft ref={container}>\r\n         <Title>Big is better</Title>\r\n         <Text>\r\n           Lorem ipsum, dolor sit amet consectetur adipisicing elit.\r\n           Necessitatibus dignissimos ipsam.\r\n"
+                },
+                {
+                    "date": 1685492822488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -116,10 +116,10 @@\n         </Text>\r\n       </TextBlockLeft>\r\n \r\n       <TextContainer>\r\n-        <MovingText>Tougher then ever!</MovingText>\r\n-        <MovingText>Every touch matters.</MovingText>\r\n+        <MovingText ref={textOne}>Tougher then ever!</MovingText>\r\n+        <MovingText ref={textTwo}>Every touch matters.</MovingText>\r\n       </TextContainer>\r\n     </Section>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1685492864640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -88,10 +88,10 @@\n             // 向上滑动时，有动画\r\n             scrub: true\r\n           }\r\n         })\r\n-        .fromTo(textOne.current, { x: 0 }, { x: '10%' }, 'key1')\r\n-        .fromTo(textTwo.current, { x: 0 }, { x: '-10%' }, 'key1')\r\n+        .fromTo(textOne.current, { x: 0 }, { x: '20%' }, 'key1')\r\n+        .fromTo(textTwo.current, { x: 0 }, { x: '-20%' }, 'key1')\r\n       return () => {\r\n         if (t1) t1.kill()\r\n       }\r\n     }, [])\r\n"
+                }
+            ],
+            "date": 1685407125500,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}
