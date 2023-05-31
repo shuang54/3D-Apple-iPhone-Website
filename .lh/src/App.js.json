@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 9,
+            "activePatchIndex": 10,
             "patches": [
                 {
                     "date": 1685320988341,
@@ -44,6 +44,10 @@
                 {
                     "date": 1685407171324,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import DesignSection from \"./sections/DesignSection\";\r\n+import DisplaySection from \"./sections/DisplaySection\";\r\n import HeroSection from \"./sections/HeroSection\";\r\n import PhoneModel from \"./sections/PhoneModel\";\r\n import Quote from \"./sections/Quote\";\r\n import { GlobalStyle } from \"./styles/GlobalStyle\"\r\n@@ -11,8 +12,9 @@\n       <Quote/>\r\n       {/* <PhoneModel/> */}\r\n       <HeroSection/>\r\n       <DesignSection/>\r\n+      <DisplaySection/>\r\n     </>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685492996312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import DesignSection from \"./sections/DesignSection\";\r\n import DisplaySection from \"./sections/DisplaySection\";\r\n import HeroSection from \"./sections/HeroSection\";\r\n import PhoneModel from \"./sections/PhoneModel\";\r\n+import ProcessorSection from \"./sections/ProcessorSection\";\r\n import Quote from \"./sections/Quote\";\r\n import { GlobalStyle } from \"./styles/GlobalStyle\"\r\n \r\n function App() {\r\n@@ -13,8 +14,9 @@\n       {/* <PhoneModel/> */}\r\n       <HeroSection/>\r\n       <DesignSection/>\r\n       <DisplaySection/>\r\n+      <ProcessorSection/>\r\n     </>\r\n   );\r\n }\r\n \r\n"
                 }
             ],
             "date": 1685320988341,

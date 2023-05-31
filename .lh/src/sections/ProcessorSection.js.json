@@ -1,0 +1,90 @@
+{
+    "sourceFile": "src/sections/ProcessorSection.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1685492964498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685492983605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,9 @@\n-safce\n\\ No newline at end of file\n+import React from 'react'\r\n+\r\n+const ProcessorSection = () => {\r\n+  return (\r\n+    <div>ProcessorSection</div>\r\n+  )\r\n+}\r\n+\r\n+export default ProcessorSection\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685493244203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,18 @@\n import React from 'react'\r\n+import styled from 'styled-components'\r\n \r\n+const Section = styled.section`\r\n+  width:100vw;\r\n+  height:100vh;\r\n+  position:relative;\r\n+`\r\n+\r\n const ProcessorSection = () => {\r\n   return (\r\n-    <div>ProcessorSection</div>\r\n+    <Section>\r\n+      <Title>Fastest Processor</Title>\r\n+    </Section>\r\n   )\r\n }\r\n \r\n export default ProcessorSection\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685493297296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,15 @@\n const Section = styled.section`\r\n   width:100vw;\r\n   height:100vh;\r\n   position:relative;\r\n+\r\n+  display:flex;\r\n+  justify-content:flex-start;\r\n+  align-items:center;\r\n+\r\n+  background-color:var(--dark);\r\n+  overflow:hidden;\r\n `\r\n \r\n const ProcessorSection = () => {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1685493346223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,12 @@\n   background-color:var(--dark);\r\n   overflow:hidden;\r\n `\r\n \r\n+const Title = styled.h1`\r\n+ \r\n+`\r\n+\r\n const ProcessorSection = () => {\r\n   return (\r\n     <Section>\r\n       <Title>Fastest Processor</Title>\r\n"
+                },
+                {
+                    "date": 1685493418330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n   justify-content:flex-start;\r\n   align-items:center;\r\n \r\n   background-color:var(--dark);\r\n+  color:var(--white);\r\n   overflow:hidden;\r\n `\r\n \r\n const Title = styled.h1`\r\n"
+                },
+                {
+                    "date": 1685493560948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,22 @@\n   overflow:hidden;\r\n `\r\n \r\n const Title = styled.h1`\r\n- \r\n+  width: 100%;\r\n+  text-align: center;\r\n+  position: absolute;\r\n+  bottom: 2rem;\r\n+  left: 20%;\r\n+  transform: translateX(-50%);\r\n+  font-size: var(--fontBig);\r\n+  font-family: var(--fontL);\r\n+  z-index: 1;\r\n+\r\n+  background-image: linear-gradient(-45deg, var(--gradient));\r\n+  background-clip: text;\r\n+  -webkit-background-clip: text;\r\n+  -webkit-text-fill-color: transparent;\r\n `\r\n \r\n const ProcessorSection = () => {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1685493598248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n   font-size: var(--fontBig);\r\n   font-family: var(--fontL);\r\n   z-index: 1;\r\n \r\n-  background-image: linear-gradient(-45deg, var(--gradient));\r\n+  background-image: linear-gradient(90deg, var(--gradient));\r\n   background-clip: text;\r\n   -webkit-background-clip: text;\r\n   -webkit-text-fill-color: transparent;\r\n `\r\n"
+                },
+                {
+                    "date": 1685493622361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   width: 100%;\r\n   text-align: center;\r\n   position: absolute;\r\n   bottom: 2rem;\r\n-  left: 20%;\r\n+  left: 50%;\r\n   transform: translateX(-50%);\r\n   font-size: var(--fontBig);\r\n   font-family: var(--fontL);\r\n   z-index: 1;\r\n"
+                },
+                {
+                    "date": 1685493662692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react'\r\n import styled from 'styled-components'\r\n-\r\n+import a15 from '../assets/Images/A15-Bionic.jpg'\r\n const Section = styled.section`\r\n   width:100vw;\r\n   height:100vh;\r\n   position:relative;\r\n"
+                },
+                {
+                    "date": 1685493706981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,9 @@\n const ProcessorSection = () => {\r\n   return (\r\n     <Section>\r\n       <Title>Fastest Processor</Title>\r\n+      <img src={a15} alt=\"A15 processor\" />\r\n     </Section>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685493833567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,13 +31,27 @@\n   -webkit-background-clip: text;\r\n   -webkit-text-fill-color: transparent;\r\n `\r\n \r\n+const Processor = styled.div`\r\n+  width:25%\r\n+  position:absolute;\r\n+  top:50%;\r\n+  left:50%;\r\n+  transform:translate(-50%,-50%);\r\n+\r\n+  display:flex;\r\n+  justify-content:center;\r\n+  align-items:center;\r\n+`\r\n+\r\n const ProcessorSection = () => {\r\n   return (\r\n     <Section>\r\n       <Title>Fastest Processor</Title>\r\n-      <img src={a15} alt=\"A15 processor\" />\r\n+      <Processor>\r\n+        <img src={a15} alt=\"A15 processor\" />\r\n+      </Processor>\r\n     </Section>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685493842908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,13 @@\n \r\n   display:flex;\r\n   justify-content:center;\r\n   align-items:center;\r\n+\r\n+  img{\r\n+    width:100%;\r\n+    height:auto;\r\n+  }\r\n `\r\n \r\n const ProcessorSection = () => {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1685493880815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n   -webkit-text-fill-color: transparent;\r\n `\r\n \r\n const Processor = styled.div`\r\n-  width:25%\r\n+  width:25%;\r\n   position:absolute;\r\n   top:50%;\r\n   left:50%;\r\n   transform:translate(-50%,-50%);\r\n"
+                },
+                {
+                    "date": 1685494028958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,15 +31,20 @@\n   -webkit-background-clip: text;\r\n   -webkit-text-fill-color: transparent;\r\n `\r\n \r\n+const glow = \r\n+\r\n const Processor = styled.div`\r\n   width:25%;\r\n   position:absolute;\r\n   top:50%;\r\n   left:50%;\r\n   transform:translate(-50%,-50%);\r\n \r\n+  animation:${glow} 3s ease infinite;\r\n+  padding:0.5rem;\r\n+\r\n   display:flex;\r\n   justify-content:center;\r\n   align-items:center;\r\n \r\n"
+                },
+                {
+                    "date": 1685494088515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react'\r\n-import styled from 'styled-components'\r\n+import styled, { keyframes } from 'styled-components'\r\n import a15 from '../assets/Images/A15-Bionic.jpg'\r\n const Section = styled.section`\r\n   width:100vw;\r\n   height:100vh;\r\n@@ -31,9 +31,19 @@\n   -webkit-background-clip: text;\r\n   -webkit-text-fill-color: transparent;\r\n `\r\n \r\n-const glow = \r\n+const glow = keyframes`\r\n+  0%{\r\n+    box-shadow:1px 1px 10px var(--white);\r\n+  }\r\n+  50%{\r\n+    box-shadow:2px 2px 25px var(--white);\r\n+  }\r\n+  100%{\r\n+    box-shadow:1px 1px 10px var(--white);\r\n+  }\r\n+`\r\n \r\n const Processor = styled.div`\r\n   width:25%;\r\n   position:absolute;\r\n"
+                },
+                {
+                    "date": 1685494122122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,24 +44,24 @@\n   }\r\n `\r\n \r\n const Processor = styled.div`\r\n-  width:25%;\r\n-  position:absolute;\r\n-  top:50%;\r\n-  left:50%;\r\n-  transform:translate(-50%,-50%);\r\n+  width: 25%;\r\n+  position: absolute;\r\n+  top: 50%;\r\n+  left: 50%;\r\n+  transform: translate(-50%, -50%);\r\n \r\n-  animation:${glow} 3s ease infinite;\r\n-  padding:0.5rem;\r\n+  animation: ${glow} 3s ease infinite;\r\n+  padding: 0.5rem;\r\n \r\n-  display:flex;\r\n-  justify-content:center;\r\n-  align-items:center;\r\n+  display: flex;\r\n+  justify-content: center;\r\n+  align-items: center;\r\n \r\n-  img{\r\n-    width:100%;\r\n-    height:auto;\r\n+  img {\r\n+    width: 100%;\r\n+    height: auto;\r\n   }\r\n `\r\n \r\n const ProcessorSection = () => {\r\n"
+                },
+                {
+                    "date": 1685494339663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,16 +62,43 @@\n     width: 100%;\r\n     height: auto;\r\n   }\r\n `\r\n+const Text = styled.div`\r\n+  font-size:var(--fontxs);\r\n+  color:var(--greyLight);\r\n+  width:30%;\r\n+  height:40vh;\r\n \r\n+  display:flex;\r\n+  flex-direction:column;\r\n+  justify-content:center;\r\n+\r\n+  span{\r\n+    margin\r\n+  }\r\n+`\r\n+\r\n const ProcessorSection = () => {\r\n   return (\r\n     <Section>\r\n       <Title>Fastest Processor</Title>\r\n       <Processor>\r\n         <img src={a15} alt=\"A15 processor\" />\r\n       </Processor>\r\n+      <Text>\r\n+        <span>\r\n+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.\r\n+          Reprehenderit numquam quae nisi, dolore cum voluptatem cumque quo sit,\r\n+          consequuntur necessitatibus iste fuga assumenda deserunt aut omnis,\r\n+          quaerat aliquid optio veniam.\r\n+        </span>\r\n+        <span>\r\n+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.\r\n+          Reprehenderit numquam quae nisi, dolore cum voluptatem cumque quo sit,\r\n+          consequuntur necessitatibus iste fuga assumenda deserunt aut.\r\n+        </span>\r\n+      </Text>\r\n     </Section>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1685494348705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,20 +63,40 @@\n     height: auto;\r\n   }\r\n `\r\n const Text = styled.div`\r\n-  font-size:var(--fontxs);\r\n-  color:var(--greyLight);\r\n-  width:30%;\r\n-  height:40vh;\r\n+  font-size: var(--fontxs);\r\n+  color: var(--greyLight);\r\n+  width: 30%;\r\n+  height: 40vh;\r\n \r\n-  display:flex;\r\n-  flex-direction:column;\r\n-  justify-content:center;\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+  justify-content: center;\r\n \r\n-  span{\r\n-    margin\r\n+  span {\r\n+    margin: 0.2rem 0;\r\n+    padding-left: 2rem;\r\n   }\r\n+\r\n+  @media screen and (max-width: 64em) {\r\n+    width: 50%;\r\n+  }\r\n+  @media screen and (max-width: 48em) {\r\n+    width: 100%;\r\n+    font-size: var(--fontxxs);\r\n+    span {\r\n+      width: 40%;\r\n+      padding-left: 1rem;\r\n+    }\r\n+\r\n+    & > *:last-child {\r\n+      align-self: flex-end;\r\n+      padding-left: 0;\r\n+      padding-right: 1rem;\r\n+      text-align: right;\r\n+    }\r\n+  }\r\n `\r\n \r\n const ProcessorSection = () => {\r\n   return (\r\n"
+                }
+            ],
+            "date": 1685492964498,
+            "name": "Commit-0",
+            "content": "safce"
+        }
+    ]
+}
