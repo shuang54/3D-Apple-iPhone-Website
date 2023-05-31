@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1685535074845,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685539091795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,12 @@\n   // console.log(camera)\n   useLayoutEffect(() => {\n     camera.position.set(-0.1,0.4,5);\n     materials.Body.color.set('#9BB5CE');\n-    \n+     if (window.matchMedia('(max-width: 48em)').matches) {\n+       camera.fov = 18\n+       camera.updateProjectionMatrix()\n+     }\n   }, [])\n   // console.log(camera)\n \n   return (\n"
                 }
             ],
             "date": 1685535074845,

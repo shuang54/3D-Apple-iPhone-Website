@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1685535617177,
@@ -16,6 +16,10 @@
                 {
                     "date": 1685535680962,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,11 @@\n       .to(scene.rotation, { y: 0, z: 0 }, 'ke2')\n       .to(camera.position, { z: 6, x: -1 }, 'key2')\n       .to(scene.rotation, { z: 0, y: 6.3 }, 'key3')\n       .to(camera.position, { x: 0.8, y: 0 }, 'key3')\n-\n+ return () => {\n+   if (t1) t1.kill()\n+ }\n   }, [])\n   // console.log(camera)\n \n   return (\n"
+                },
+                {
+                    "date": 1685538971132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,35 +18,62 @@\n   const { nodes, materials } = useGLTF('/scene.gltf')\n   let camera = useThree(state => state.camera)\n   let scene = useThree(state => state.scene);\n   console.log(camera)\n-  useLayoutEffect(() => {\n-    camera.position.set(0,2,6);\n-    materials.Body.color.set('#9BB5CE');\n-    let t1 = gsap.timeline({\n-      scrollTrigger:{\n-        trigger:\"#phone-model\",\n-        start:\"top+=200 top\",\n-        endTrigger:\"#battery\",\n-        end:\"top top\",\n-        scrub:true,\n-        markers:true,\n-      }\n-    })\n-    \n-    t1.fromTo(camera.position, { y: 2 }, { y: 0 })\n-      .to(scene.rotation, { y: 0.8 })\n-      .to(scene.rotation, { y: 3 })\n-      .to(scene.rotation, { z: 1.58 }, 'key1')\n-      .to(camera.position, { z: 4 }, 'key1')\n-      .to(scene.rotation, { y: 0, z: 0 }, 'ke2')\n-      .to(camera.position, { z: 6, x: -1 }, 'key2')\n-      .to(scene.rotation, { z: 0, y: 6.3 }, 'key3')\n-      .to(camera.position, { x: 0.8, y: 0 }, 'key3')\n- return () => {\n-   if (t1) t1.kill()\n- }\n-  }, [])\n+   useLayoutEffect(() => {\n+     camera.position.set(0, 2, 6)\n+     materials.Body.color.set('#9BB5CE')\n+\n+     let fov = camera.fov\n+\n+     fov = (1400 * 18) / window.innerWidth\n+     camera.fov = fov\n+     camera.updateProjectionMatrix()\n+\n+     let mm = gsap.matchMedia()\n+\n+     mm.add(\n+       {\n+         // set up any number of arbitrarily-named conditions. The function below will be called when ANY of them match.\n+         isDesktop: `(min-width: 48em)`,\n+         isMobile: `(max-width:48em`\n+       },\n+       (context) => {\n+         // context.conditions has a boolean property for each condition defined above indicating if it's matched or not.\n+         let { isDesktop, isMobile } = context.conditions\n+\n+         let t1 = gsap.timeline({\n+           scrollTrigger: {\n+             trigger: '#phone-model',\n+             start: 'top+=200 top',\n+             endTrigger: '#battery',\n+             end: 'top top',\n+             scrub: 1\n+             // markers: true,\n+           }\n+         })\n+\n+         t1.fromTo(camera.position, { y: 2 }, { y: 0 })\n+           .to(scene.rotation, { y: 0.8 })\n+           .to(scene.rotation, { y: 3 })\n+           .to(scene.rotation, { z: 1.58 }, 'key1')\n+           .to(camera.position, { z: 4 }, 'key1')\n+           .to(scene.rotation, { y: 0, z: 0 }, 'key2')\n+           .to(camera.position, { z: 6, x: isDesktop ? -1 : 0 }, 'key2')\n+           .to(scene.rotation, { z: 0, y: 6.3 }, 'key3')\n+           .to(camera.position, { x: isDesktop ? 0.8 : 0, y: 0 }, 'key3')\n+\n+         if (isMobile) {\n+           camera.fov = 20\n+           camera.updateProjectionMatrix()\n+         }\n+\n+         return () => {\n+           if (t1) t1.kill()\n+         }\n+       }\n+     )\n+   }, [])\n   // console.log(camera)\n \n   return (\n     <group ref={group} {...props} dispose={null}>\n"
                 }
             ],
             "date": 1685535617177,
